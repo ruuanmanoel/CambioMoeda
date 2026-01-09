@@ -10,7 +10,6 @@ async function getPairConversion(
   const quantidadeFormatada = quantidade.toFixed(2).replace(",", ".");
   // Get API key from environment variables
   const apiKey = process.env.API_KEY;
-  console.log(`apiKey : ${apiKey}`);
   // Construct the API URL
   const url = `https://v6.exchangerate-api.com/v6/${apiKey}/pair/${moedaDe}/${moedaPara}/${quantidadeFormatada}`;
 
@@ -27,7 +26,6 @@ async function getPairConversion(
     conversion_result: valorTotal,
   } = data;
 
-  console.log(`Valor da moeda convertida: ${data.conversion_rate}`);
   // Return the conversion values
   return {
     valorMoedaConvertida,
